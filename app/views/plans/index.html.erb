@@ -1,0 +1,43 @@
+<h3>Which Economist Subscription will work best for you?</h3>
+<p><%= link_to 'Users:', users_path %> <%= User.count %> registered</p>
+
+<main role="main" class="container">
+  <% @plans.each do |plan| %>
+  <div class="row" class="plan">
+    <div class="col-log-12">
+    <%= render 'layouts/messages' %>
+    <%= yield %>
+  </div>
+<% end %>
+</main>
+<!-- <% @plans.each do |plan| %>
+<div class="plan">
+  <div class="name"><%= plan.name %></div>
+  <div class="details">
+    <div class="price">
+      <%= number_to_currency plan.price, :precision => 0 %>
+    </div>
+    <div class="per_month">per month</div>
+    <div class="photos"><%= plan.photos %> photos</div>
+    <div class="per_month">per month</div>
+    <div class="signup">
+      <%= link_to "Sign up", new_subscription_path(:plan_id => plan.id) %>
+    </div>
+  </div>
+</div>
+<% end %>
+<div class="clear"></div>
+</div> -->
+
+<!-- <div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="..." alt="...">
+      <div class="caption">
+        <h3>Thumbnail label</h3>
+        <p>...</p>
+        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+      </div>
+    </div>
+  </div>
+</div> -->

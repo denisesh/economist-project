@@ -1,2 +1,20 @@
-<h3>Welcome</h3>
+<h3>Welcome to our National Geographic Photos</h3>
 <p><%= link_to 'Users:', users_path %> <%= User.count %> registered</p>
+<% @plans.each do |plan| %>
+  <div class="plan">
+    <div class="name"><%= plan.name %></div>
+    <div class="details">
+      <div class="price">
+        <%= number_to_currency plan.price, :precision => 0 %>
+      </div>
+      <div class="per_month">per month</div>
+      <div class="photos"><%= plan.photos %> photos</div>
+      <div class="per_month">per month</div>
+      <div class="signup">
+        <%= link_to "Sign up", new_subscription_path(:plan_id => plan.id) %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+  <div class="clear"></div>
+</div>

@@ -10,6 +10,8 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
+  #READTHIS
+  #When Devise sends a password reset email message to a user, the config.mailer_sender setting determines the reply-to address. Your users only see this if they try to reply to the password reset email message. When you use Gmail to send mail, Gmail displays the Gmail account as the sender. Other email service providers may display the config.mailer_sender value as the sender.
   config.mailer_sender = 'no-reply@' + Rails.application.secrets.domain_name
 
   # Configure the class responsible to send e-mails.
